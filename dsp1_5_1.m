@@ -1,0 +1,10 @@
+N=10; 
+fs=10; 
+T=1/fs; 
+ws=2*pi*fs;
+t=(0:N-1)*T;
+x=T*exp(-t*3); 
+X=fftshift(fft(x));
+w=-ws/2+(0:N-1)*ws/N; 
+FT=1./sqrt(9+w.*w);
+plot(w,abs(X));
